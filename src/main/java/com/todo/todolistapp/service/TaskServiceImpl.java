@@ -31,11 +31,9 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public void deleteTask(String id) {
-        boolean deleted = false;
         Optional<Task> task = taskRepository.findById(id);
         if (task.isPresent()){
             taskRepository.delete(taskRepository.getById(id));
-            deleted = true;
         }
     }
 
